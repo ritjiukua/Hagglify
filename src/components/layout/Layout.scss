@@ -1,0 +1,79 @@
+.layout {
+  min-height: 100vh;
+  background-color: var(--color-bg-primary);
+  transition: background-color 0.3s ease;
+  
+  .layout-main {
+    padding-top: 1rem; // Reduced from 80px to fix extra space at top
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    
+    @media (min-width: 640px) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--color-bg-primary);
+  
+  .layout-content {
+    flex: 1;
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .main-content {
+    padding: 0; // Remove padding to allow pages to control their own spacing
+    background-color: var(--color-bg-primary);
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto; // Make the content area scrollable
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &.sidebar-collapsed {
+    .layout-content {
+      margin-left: 70px;
+      width: calc(100% - 70px);
+    }
+  }
+  
+  .debug-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--surface-primary);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    
+    &:hover {
+      color: var(--primary);
+      background: var(--surface-hover);
+    }
+  }
+} 

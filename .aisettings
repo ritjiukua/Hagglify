@@ -1,0 +1,83 @@
+{
+  "editor": {
+    "formatOnSave": true,
+    "tabSize": 2,
+    "insertSpaces": true
+  },
+  "javascript": {
+    "preferences": {
+      "importModuleSpecifier": "relative",
+      "quoteStyle": "single"
+    },
+    "suggest": {
+      "completeFunctionCalls": true,
+      "autoImports": true
+    },
+    "updateImportsOnFileMove": "always"
+  },
+  "search": {
+    "exclude": {
+      "**/node_modules": true,
+      "**/build": true,
+      "**/.git": true
+    }
+  },
+  "eslint": {
+    "enable": true,
+    "run": "onSave"
+  },
+  "path-intellisense": {
+    "mappings": {
+      "src": "${workspaceRoot}/src"
+    }
+  },
+  "importResolver": {
+    "baseUrl": "src",
+    "paths": {
+      "components/*": ["components/*"],
+      "pages/*": ["pages/*"],
+      "services/*": ["services/*"],
+      "context/*": ["context/*"],
+      "firebase/*": ["firebase/*"],
+      "styles/*": ["styles/*"],
+      "assets/*": ["assets/*"],
+      "helpers/*": ["helpers/*"],
+      "utils/*": ["utils/*"]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "es5"
+  },
+  "sass": {
+    "format": {
+      "enable": true
+    }
+  },
+  "files.associations": {
+    "*.scss": "scss"
+  },
+  "reactSnippets": {
+    "settings": {
+      "importReactOnTop": true,
+      "typescript": false,
+      "postfix": false
+    }
+  },
+  "firebaseUsage": {
+    "auth": true,
+    "firestore": true,
+    "storage": true
+  },
+  "environmentVariables": {
+    "REACT_APP_FIREBASE_API_KEY": "",
+    "REACT_APP_FIREBASE_AUTH_DOMAIN": "",
+    "REACT_APP_FIREBASE_PROJECT_ID": "",
+    "REACT_APP_FIREBASE_STORAGE_BUCKET": "",
+    "REACT_APP_FIREBASE_MESSAGING_SENDER_ID": "",
+    "REACT_APP_FIREBASE_APP_ID": "",
+    "REACT_APP_FIREBASE_MEASUREMENT_ID": "",
+    "REACT_APP_API_URL": "http://localhost:5000"
+  }
+} 

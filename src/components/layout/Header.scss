@@ -1,0 +1,199 @@
+.app-header {
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    
+    .logo-icon {
+      font-size: 1.5rem;
+    }
+    
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+    
+    .nav-link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      
+      &:hover,
+      &.active {
+        color: var(--color-primary);
+      }
+    }
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s, color 0.2s;
+      
+      &:hover {
+        background-color: var(--color-bg-hover);
+        color: var(--color-text-primary);
+      }
+    }
+    
+    .user-menu-container {
+      position: relative;
+      
+      .user-menu-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        
+        .avatar {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 9999px;
+          background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+        }
+      }
+      
+      .user-dropdown {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 0;
+        width: 250px;
+        background-color: var(--color-bg-secondary);
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        z-index: 10;
+        
+        .user-info {
+          padding: 1rem;
+          
+          .user-name {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.25rem;
+          }
+          
+          .user-email {
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+          }
+        }
+        
+        .dropdown-divider {
+          height: 1px;
+          background-color: var(--color-border);
+          margin: 0.25rem 0;
+        }
+        
+        .dropdown-item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.75rem 1rem;
+          color: var(--color-text-secondary);
+          text-decoration: none;
+          transition: background-color 0.2s;
+          
+          &:hover {
+            background-color: var(--color-bg-hover);
+            color: var(--color-text-primary);
+          }
+          
+          &.logout-item {
+            color: var(--color-danger);
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1rem;
+            
+            &:hover {
+              background-color: rgba(var(--color-danger-rgb), 0.1);
+            }
+          }
+        }
+      }
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 0.75rem;
+      
+      .login-button {
+        padding: 0.5rem 1rem;
+        color: var(--color-primary);
+        background-color: transparent;
+        border: 1px solid var(--color-primary);
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.2s, color 0.2s;
+        
+        &:hover {
+          background-color: rgba(var(--color-primary-rgb), 0.1);
+        }
+      }
+      
+      .signup-button {
+        padding: 0.5rem 1rem;
+        color: white;
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.2s;
+        
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+} 

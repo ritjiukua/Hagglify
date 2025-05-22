@@ -1,0 +1,215 @@
+.past-negotiations {
+  background: var(--color-bg-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  
+  &.loading, &.error, &.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary, #333);
+    }
+    
+    p {
+      color: var(--color-text-secondary, #666);
+      margin-bottom: 1.5rem;
+    }
+    
+    .loading-icon {
+      font-size: 2rem;
+      color: var(--color-primary, #4c6fff);
+      animation: spin 1.5s linear infinite;
+      margin-bottom: 1rem;
+    }
+    
+    button, .start-button {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--color-primary, #4c6fff);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      
+      &:hover {
+        background-color: var(--color-primary-dark, #3b5bff);
+      }
+    }
+  }
+  
+  .negotiations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    h3 {
+      font-size: 1.25rem;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+        border-radius: 3px;
+      }
+    }
+    
+    .view-all {
+      color: var(--color-primary);
+      font-weight: 500;
+      transition: all 0.2s;
+      
+      &:hover {
+        color: var(--color-primary-dark);
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .negotiations-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    
+    .negotiation-card {
+      background: var(--color-bg-card);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      border: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(76, 111, 255, 0.08) 0%, rgba(76, 111, 255, 0) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        
+        &::after {
+          opacity: 1;
+        }
+        
+        .continue-button {
+          background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+          color: white;
+        }
+      }
+      
+      .negotiation-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        
+        h4 {
+          font-size: 1rem;
+          font-weight: 600;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 70%;
+        }
+        
+        .mode {
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.25rem 0.5rem;
+          border-radius: 1rem;
+          text-transform: uppercase;
+          
+          &.buying {
+            background-color: rgba(52, 211, 153, 0.15);
+            color: #10b981;
+          }
+          
+          &.selling {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+          }
+        }
+      }
+      
+      .negotiation-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.85rem;
+        color: var(--color-text-secondary, #666);
+        
+        .price-range, .date-info {
+          display: flex;
+          align-items: center;
+          
+          svg {
+            margin-right: 0.25rem;
+          }
+          
+          .arrow {
+            margin: 0 0.25rem;
+            color: var(--color-text-muted, #94a3b8);
+          }
+        }
+        
+        .message-count {
+          margin-left: auto;
+        }
+      }
+      
+      .negotiation-status {
+        display: flex;
+        justify-content: flex-end;
+        
+        .continue-button {
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--color-primary, #4c6fff);
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 

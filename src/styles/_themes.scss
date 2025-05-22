@@ -1,0 +1,120 @@
+// Theme variables
+:root {
+  // Light theme (default)
+  --color-bg-primary: #F9FAFB;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F3F4F6;
+  --color-bg-accent: #EEF2FF;
+  
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #4B5563;
+  --color-text-tertiary: #6B7280;
+  
+  --color-border: #E5E7EB;
+  
+  --color-primary: #4C6FFF;
+  --color-primary-light: #6A93FF;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  
+  --color-chart-1: #4C6FFF;
+  --color-chart-2: #FF6B6B;
+  --color-chart-3: #FC8181;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  // New variables for our redesigned UI
+  --primary: #4C6FFF;
+  --primary-dark: #3A5BE8;
+  --primary-light: #EEF2FF;
+  --primary-rgb: 76, 111, 255;
+  
+  --success: #10B981;
+  --success-light: #ECFDF5;
+  --success-dark: #059669;
+  --success-rgb: 16, 185, 129;
+  
+  --warning: #F59E0B;
+  --warning-light: #FFFBEB;
+  --warning-dark: #D97706;
+  --warning-rgb: 245, 158, 11;
+  
+  --danger: #EF4444;
+  --danger-light: #FEF2F2;
+  --danger-dark: #DC2626;
+  --danger-rgb: 239, 68, 68;
+  
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F9FAFB;
+  --surface-hover: #F3F4F6;
+  
+  --border-light: #E5E7EB;
+  --border-medium: #D1D5DB;
+}
+
+// Dark theme class to be toggled
+.dark-theme {
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1F2937;
+  --color-bg-tertiary: #374151;
+  --color-bg-accent: #312E81;
+  
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #E5E7EB;
+  --color-text-tertiary: #9CA3AF;
+  
+  --color-border: #374151;
+  
+  --color-primary: #5B74F7;
+  --color-primary-light: #818CF8;
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+  
+  --color-chart-1: #5B74F7;
+  --color-chart-2: #F87171;
+  --color-chart-3: #FC8181;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  
+  // New variables for dark theme
+  --primary: #5B74F7;
+  --primary-dark: #4C63D9;
+  --primary-light: #1E293B;
+  --primary-rgb: 91, 116, 247;
+  
+  --success: #34D399;
+  --success-light: #0F3A2C;
+  --success-dark: #10B981;
+  --success-rgb: 52, 211, 153;
+  
+  --warning: #FBBF24;
+  --warning-light: #3A2409;
+  --warning-dark: #F59E0B;
+  --warning-rgb: 251, 191, 36;
+  
+  --danger: #F87171;
+  --danger-light: #3B0D0D;
+  --danger-dark: #EF4444;
+  --danger-rgb: 248, 113, 113;
+  
+  --text-primary: #F9FAFB;
+  --text-secondary: #E5E7EB;
+  --text-tertiary: #9CA3AF;
+  
+  --surface-primary: #1F2937;
+  --surface-secondary: #111827;
+  --surface-hover: #374151;
+  
+  --border-light: #374151;
+  --border-medium: #4B5563;
+} 
