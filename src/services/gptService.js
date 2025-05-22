@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// NOTE: In production, API keys should never be in client-side code
-// This should be moved to your backend service
+
 const API_KEY = process.env.REACT_APP_GPT_API_KEY;
 
 // Base configuration for API calls
@@ -10,15 +9,7 @@ const gptApi = axios.create({
   headers: {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${API_KEY}`
-  }
-});
-
-/**
- * Generate a negotiation response based on conversation history and goals
- * @param {Array} messages - Array of previous messages in the conversation
- * @param {Object} negotiationData - Contains information about the negotiation
- * @returns {Promise<string>} - AI generated response
- */
+ 
 export const generateNegotiationResponse = async (messages, negotiationData) => {
   try {
     console.log('Generating AI response with data:', { negotiationData });
@@ -32,11 +23,11 @@ export const generateNegotiationResponse = async (messages, negotiationData) => 
       itemDescription = ''
     } = negotiationData;
     
-    // Track the AI's previous price commitments
+  
     let aiPreviousPrices = [];
     let lastMentionedPrice = null;
 
-    // Analyze previous messages to find all price mentions by the AI
+ 
     messages.forEach(msg => {
       if (msg.sender === 'assistant' || msg.role === 'assistant') {
         const text = msg.text || msg.content;
@@ -66,7 +57,7 @@ export const generateNegotiationResponse = async (messages, negotiationData) => 
       }
     }
     
-    // Convert the chat history to a format suitable for the API
+
     const messageHistory = messages.slice(-5).map(msg => ({
       role: msg.sender === 'user' ? 'user' : 'assistant',
       content: msg.text || msg.content
